@@ -52,6 +52,8 @@ $(function () {
         /* a test that ensures the menu element is
          * hidden by default.
          */
+
+        //select the menu item from the dom to do the check
         var menuIcon = $('.menu-icon-link');
 
         it('is hidden by default', function () {
@@ -96,6 +98,7 @@ $(function () {
         var currentFeed;
         beforeEach(function (done) {
             loadFeed(0, function () {
+                //get the old feed in a variable to compare it ith the new feed later
                 currentFeed = $('.feed').html();
                 loadFeed(1, function () {
                     done();
