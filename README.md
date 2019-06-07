@@ -10,8 +10,8 @@
 
 This project is a web-based application that reads RSS feeds.
 Udacity providd the starter code for the application, I've edited it to add the necessary test suites for it to perform perfectly.
-the testing is done using [Jasmine](http://jasmine.github.io/).
-	- [Udacity's starter code](https://github.com/udacity/frontend-nanodegree-feedreader).
+the testing is done using [Jasmine](http://jasmine.github.io/).<br/>
+	 [Udacity's starter code](https://github.com/udacity/frontend-nanodegree-feedreader).
 
 # How To Run
 
