@@ -29,8 +29,10 @@ $(function () {
          */
         it('has url', function () {
             for (feed of allFeeds) {
-                expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
+                //expect(feed.url).toBeDefined();
+                //expect(feed.url.length).not.toBe(0);
+                expect(feed.url).toBeTruthy();
+                //This covers all truthiness, including url.length === 0 and url === undefined !
             }
         });
 
@@ -79,16 +81,15 @@ $(function () {
         * the use of Jasmine's beforeEach and asynchronous done() function
         */
         beforeEach(function (done) {
-            loadFeed(0, function () {
-                done();
-            });
+            loadFeed(0, done);
         });
         /* a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
         it('has entry element in the feed container', function () {
-            expect($('.feed').has('.entry').length).not.toBe(0);
+            //expect($('.feed').has('.entry').length).not.toBe(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
         
@@ -100,9 +101,7 @@ $(function () {
             loadFeed(0, function () {
                 //get the old feed in a variable to compare it ith the new feed later
                 currentFeed = $('.feed').html();
-                loadFeed(1, function () {
-                    done();
-                });
+                loadFeed(1, done);
             });
         });
         /*a test that ensures when a new feed is loaded
